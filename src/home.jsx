@@ -1,7 +1,7 @@
 import Navbar from './navbar.jsx'
 import Hero from './hero.jsx';
 import Body from './body.jsx';
-
+import Faqs from './faqs.jsx'
 
 const Home = () => {
     return (
@@ -11,11 +11,12 @@ const Home = () => {
             
                     <Navbar />
                     <Hero />
-                    
+                            
                 </div>
                 
             </div>
-            <Body/>
+            <Body />
+            <Faqs/>
         </div>
     )
 }
