@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react'
     forwards = true,
     skip_count = 0,
     skip_delay = 15,
-    speed = 100;
+    speed = 150;
  
 export default function hero() {
      const [part ,setPart] = useState()
