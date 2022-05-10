@@ -65,7 +65,7 @@ const movies = () => {
                     </div>
                 </div>
             </div>
-            <Category name="New Addition" url="https://api.themoviedb.org/3/movie/popular?api_key=f489443c1aa8276f912ac60f1c1d9fd4&language=en-US&page=1" />
+            <Category name="New Additions" url="https://api.themoviedb.org/3/movie/popular?api_key=f489443c1aa8276f912ac60f1c1d9fd4&language=en-US&page=1" />
 
             {movielist.map((list) => (
                 <Idlist name={list.name} key={list.id} url={`https://api.themoviedb.org/3/list/${list.id}?api_key=f489443c1aa8276f912ac60f1c1d9fd4&language=en-US`}/>
