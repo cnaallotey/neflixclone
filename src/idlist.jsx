@@ -14,7 +14,10 @@ const idlist = (props) => {
         <img src={`${imageurl}${list.poster_path}`} className="w-full hover:-translate-y-2 transition-all duration-200" alt="" />
         <div className="p-2 w-full h-full absolute z-10 top-0 bg-gradient-to-t flex flex-col justify-end from-black transform opacity-0 hover:opacity-100 transition-all duration-200">
             <p className="text-white text-xl font-medium mb-1 text-left">{list.title}</p>
-            <p className="text-gray-300 text-sm text-left font-normal">Ratings: {list.vote_average}</p></div>
+            <p className="text-gray-300 text-sm text-left font-normal">Ratings: {list.vote_average}</p>
+             <p className="text-gray-300 text-sm text-left font-normal">Year: {(list.release_date).substr(0, 4)}</p>
+        </div>
+        
                 </div>)
         )
 
@@ -23,10 +26,11 @@ const idlist = (props) => {
     useEffect(() => {
         axios.get(props.url).then(res => {
             console.log(res.data.items)
-            setLists(res.data.items.sort(() => Math.random() - Math.random()).slice(0, 9))
+            setLists(((res.data.items).filter((movie)=> (movie.release_date).substr(0, 4) == "2022" || "2021")))
             if (res.data.items.length === 0 || props.name === "Family" || props.name === "Romance") {
                 setRender(false)
             }
+
 
             //console.log(lists)
             
